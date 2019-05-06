@@ -5,7 +5,7 @@
 npm install hamon.js --save
 ```
 
-## You have to update first:
+## You have to update first (if not using checking):
 
 ### HamonAPI#update
 
@@ -28,10 +28,18 @@ Hamon.update().then(() => {
 const HamonAPI = require("hamon.js");
 const Hamon = new HamonAPI("YOUR TOKEN HERE");
 
+// Update and check if endpoint exists:
+
 Hamon.update().then(() => {
     Hamon.get("endpoint", { /*OPTIONS GOES HERE (e.g: url, render, intensity, ...)*/ }).then(res => {
         // Your code...
     });
+});
+
+// Do not update, just fetch the endpoint. WARNING: it will give you 400 errors if endpoint name is invalid!
+
+Hamon.get("endpoint", { /*OPTIONS GOES HERE (e.g: url, render, intensity, ...)*/ }, false).then(res => {
+    // Your code...
 });
 
 // Returns a Promise<Buffer|String>
