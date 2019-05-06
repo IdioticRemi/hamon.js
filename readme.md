@@ -45,7 +45,9 @@ Hamon.update().then(() => {
 const HamonAPI = require("hamon.js");
 const Hamon = new HamonAPI("YOUR TOKEN HERE");
 
-Hamon.fetchEndpoints(/* Should result be a formatted object? default: false, type: Boolean */).then(res => console.log(res));
+Hamon.fetchEndpoints(/* Should result be a formatted object? default: false, type: Boolean */).then(res => {
+    console.log(res); // Logs all endpoints
+});
 
 // Returns a Promise<Array[String]|Object>
 ```
