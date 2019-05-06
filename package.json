@@ -1,0 +1,24 @@
+{
+  "name": "hamon.js",
+  "version": "1.0.0",
+  "description": "Module that actually simplifies the use of HamonAPI.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node example.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kizuru/hamon.js"
+  },
+  "keywords": [
+    "hamon",
+    "api",
+    "scrapper",
+    "hamonapi"
+  ],
+  "author": "- Ҝizuru キズル -#9535",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
