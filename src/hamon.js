@@ -20,13 +20,13 @@ module.exports = class HamonJS {
         this.endpoints = [];
     }
 
-    async get(endpoint, options = {}) {
+    async get(endpoint, options = {}, check = true) {
         return new Promise(async (resolve, reject) => {
             endpoint = endpoint.toLowerCase() || null;
 
-            if (this.endpoints.length === 0) return reject("You have to call update at least once before actually using the API.");
+            if (check && this.endpoints.length === 0) return reject("You have to call update at least once before actually using the API.");
             if (!endpoint) return reject("You have to provide an endpoint name to fetch.");
-            if (!this.endpoints.includes(endpoint)) return reject("This endpoint doesn't exist!");
+            if (check && !this.endpoints.includes(endpoint)) return reject("This endpoint doesn't exist!");
 
             axios(`${this.URL}/endpoint/${endpoint}${createQueryString(options)}`, {
                 headers: {"x-auth-token": this.token}
