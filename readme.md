@@ -2,7 +2,7 @@
 
 ## Installation:
 ```
-npm install hamon.js --save
+npm install Kizuru/hamon.js --save
 ```
 
 ## You have to update first (if not using checking):
